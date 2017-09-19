@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace IntakeUTM.Samples
 {
@@ -29,6 +31,15 @@ namespace IntakeUTM.Samples
                     ApplicationRepeater.DataBind();
                 }
             }
+        }
+
+        protected void ApplicationRepeater_OnItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            var itemType = e.Item.ItemType;
+            if (!itemType.Equals(ListItemType.Item) && !itemType.Equals(ListItemType.AlternatingItem)) return;
+
+            var id = e.CommandArgument.ToString();
+            OfferLetterText.Text = id;
         }
     }
 }

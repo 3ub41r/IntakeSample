@@ -1,44 +1,36 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../Site.Master" CodeBehind="SuratTawaran.aspx.cs" Inherits="IntakeUTM.Samples.SuratTawaran" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Surat Tawaran</title>
-    <style>
-        .app-table {
-            border-collapse: collapse;    
-        }
-        .app-table td, .app-table th {
-            padding: 5px;
-            border: 1px solid black;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <h1>Surat Tawaran</h1>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <h1>Surat Tawaran</h1>
             
-            <table class="app-table">
-                <thead>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Reference Number</th>
+                    <th>Email</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+            <asp:Repeater ID="ApplicationRepeater" runat="server" OnItemCommand="ApplicationRepeater_OnItemCommand">
+                <ItemTemplate>
                     <tr>
-                        <th>Name</th>
-                        <th>Reference Number</th>
+                        <td><%# Eval("Name") %></td>
+                        <td><%# Eval("RefNumber") %></td>
+                        <td><%# Eval("Email") %></td>
+                        <td>
+                            <asp:LinkButton ID="LetterButton" runat="server" CommandArgument='<%# Eval("Id") %>'>
+                                Kemaskini Surat Tawaran
+                            </asp:LinkButton>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    <asp:Repeater ID="ApplicationRepeater" runat="server">
-                        <ItemTemplate>
-                            <tr>
-                                <td><%# Eval("Name") %></td>
-                                <td><%# Eval("RefNumber") %></td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </tbody>
-            </table>
-        </div>
-    </form>
-</body>
-</html>
+                </ItemTemplate>
+            </asp:Repeater>
+            </tbody>
+        </table>
+        <asp:TextBox ID="OfferLetterText" TextMode="MultiLine" runat="server"></asp:TextBox>
+
+    </div>
+</asp:Content>
