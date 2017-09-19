@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Main.Master" ValidateRequest="false" CodeBehind="SuratTawaran.aspx.cs" Inherits="IntakeUTM.Samples.SuratTawaran" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Surat Tawaran" MasterPageFile="~/Main.Master" ValidateRequest="false" CodeBehind="SuratTawaran.aspx.cs" Inherits="IntakeUTM.Samples.SuratTawaran" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainPlaceHolder" runat="server">
     <h2 class="page-header">Surat Tawaran</h2>
