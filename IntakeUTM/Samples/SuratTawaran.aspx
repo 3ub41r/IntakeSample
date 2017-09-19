@@ -34,3 +34,15 @@
 
     </div>
 </asp:Content>
+
+<asp:Content ID="FooterContent" ContentPlaceHolderID="FooterPlaceHolder" runat="server">
+    <script src="../Scripts/trumbowyg/trumbowyg.min.js"></script>
+    <script>
+        $(function() {
+            $('#LetterButton').trumbowyg();
+        });
+    </script>
+</asp:Content>
+<asp:Content ID="HeaderContent" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
+    <link rel="stylesheet" href="../Scripts/trumbowyg/ui/trumbowyg.min.css">
+</asp:Content>
