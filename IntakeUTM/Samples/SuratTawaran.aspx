@@ -1,17 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../Site.Master" ValidateRequest="false" CodeBehind="SuratTawaran.aspx.cs" Inherits="IntakeUTM.Samples.SuratTawaran" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Main.Master" ValidateRequest="false" CodeBehind="SuratTawaran.aspx.cs" Inherits="IntakeUTM.Samples.SuratTawaran" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
-        <h1>Surat Tawaran</h1>
-            
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainPlaceHolder" runat="server">
+    <h2 class="page-header">Surat Tawaran</h2>
+        
+    <div class="table-responsive">
         <table class="table">
             <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Reference Number</th>
-                    <th>Email</th>
-                    <th>&nbsp;</th>
-                </tr>
+            <tr>
+                <th>Name</th>
+                <th>Reference Number</th>
+                <th>Email</th>
+                <th>&nbsp;</th>
+            </tr>
             </thead>
             <tbody>
             <asp:Repeater ID="ApplicationRepeater" runat="server" OnItemCommand="ApplicationRepeater_OnItemCommand">
@@ -30,16 +30,25 @@
             </asp:Repeater>
             </tbody>
         </table>
-        <asp:TextBox ID="OfferLetterText" TextMode="MultiLine" runat="server"></asp:TextBox>
-
     </div>
+    <asp:HiddenField ID="HiddenId" runat="server" />
+    <div class="form-group">
+        <asp:TextBox ID="OfferLetterText" CssClass="wysiwyg" TextMode="MultiLine" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <asp:LinkButton ID="UpdateButton" OnClick="UpdateButton_OnClick" CssClass="btn btn-primary" runat="server">
+            Kemaskini
+        </asp:LinkButton>
+    </div>
+    
+
 </asp:Content>
 
 <asp:Content ID="FooterContent" ContentPlaceHolderID="FooterPlaceHolder" runat="server">
     <script src="../Scripts/trumbowyg/trumbowyg.min.js"></script>
     <script>
         $(function() {
-            $('#LetterButton').trumbowyg();
+            $('.wysiwyg').trumbowyg();
         });
     </script>
 </asp:Content>

@@ -22,6 +22,15 @@ namespace IntakeUTM.Samples {
         protected global::System.Web.UI.WebControls.Repeater ApplicationRepeater;
         
         /// <summary>
+        /// HiddenId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenId;
+        
+        /// <summary>
         /// OfferLetterText control.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,14 @@ namespace IntakeUTM.Samples {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox OfferLetterText;
+        
+        /// <summary>
+        /// UpdateButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton UpdateButton;
     }
 }

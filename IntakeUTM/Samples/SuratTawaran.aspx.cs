@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace IntakeUTM.Samples
@@ -46,6 +45,7 @@ namespace IntakeUTM.Samples
             // Dapatkan id bagi 'row' tersebut
             var id = int.Parse(e.CommandArgument.ToString());
             OfferLetterText.Text = GetOfferLetterText(id);
+            HiddenId.Value = id.ToString();
         }
 
         protected string GetOfferLetterText(int id)
@@ -61,15 +61,38 @@ namespace IntakeUTM.Samples
                     cmd.Parameters.AddWithValue("Id", id);
                     using (var result = cmd.ExecuteReader())
                     {
-                        if (result.HasRows)
-                        {
-                            result.Read();
-                            offerLetterText = result["OfferLetterText"].ToString();
-                        }
+                        if (!result.HasRows) return offerLetterText;
+                        result.Read();
+                        offerLetterText = result["OfferLetterText"].ToString();
                     }
                 }
             }
             return offerLetterText;
+        }
+
+        protected void UpdateOfferLetterText(int id, string text)
+        {
+            const string sql = @"
+            UPDATE Application
+            SET OfferLetterText = @OfferLetterText
+            WHERE Id = @Id";
+
+            using (var c = GetConnection())
+            {
+                c.Open();
+                using (var cmd = new SqlCommand(sql, c))
+                {
+                    cmd.Parameters.AddWithValue("OfferLetterText", text);
+                    cmd.Parameters.AddWithValue("Id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        protected void UpdateButton_OnClick(object sender, EventArgs e)
+        {
+            var id = int.Parse(HiddenId.Value);
+            UpdateOfferLetterText(id, OfferLetterText.Text);
         }
     }
 }
