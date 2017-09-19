@@ -40,18 +40,16 @@
             Kemaskini
         </asp:LinkButton>
     </div>
-    
-
 </asp:Content>
 
 <asp:Content ID="FooterContent" ContentPlaceHolderID="FooterPlaceHolder" runat="server">
-    <script src="../Scripts/trumbowyg/trumbowyg.min.js"></script>
+    <script src="../Scripts/summernote/summernote.min.js"></script>
     <script>
         $(function() {
-            $('.wysiwyg').trumbowyg();
+            $('.wysiwyg').summernote();
         });
     </script>
 </asp:Content>
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
-    <link rel="stylesheet" href="../Scripts/trumbowyg/ui/trumbowyg.min.css">
+    <link rel="stylesheet" href="../Scripts/summernote/summernote.css">
 </asp:Content>
