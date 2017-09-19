@@ -12,13 +12,17 @@ namespace IntakeUTM.Samples
             BindApplications();
         }
 
+        /// <summary>
+        /// Dapatkan sambungan ke DB.
+        /// </summary>
+        /// <returns></returns>
         protected SqlConnection GetConnection()
         {
             return new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ToString());
         }
 
         /// <summary>
-        /// Dapatkan data daripada Application
+        /// Dapatkan data daripada table Application.
         /// </summary>
         protected void BindApplications()
         {
@@ -48,6 +52,11 @@ namespace IntakeUTM.Samples
             HiddenId.Value = id.ToString();
         }
 
+        /// <summary>
+        /// Dapatkan kandungan surat tawaran.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         protected string GetOfferLetterText(int id)
         {
             var offerLetterText = string.Empty;
@@ -70,6 +79,11 @@ namespace IntakeUTM.Samples
             return offerLetterText;
         }
 
+        /// <summary>
+        /// Kemaskini kadungan surat tawaran.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="text"></param>
         protected void UpdateOfferLetterText(int id, string text)
         {
             const string sql = @"
