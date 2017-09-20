@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using Dapper;
+using System;
+using IntakeUTM.Models;
 
 namespace IntakeUTM.Samples
 {
@@ -11,7 +8,18 @@ namespace IntakeUTM.Samples
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            BindProgrammes();
+        }
 
+        protected void BindProgrammes()
+        {
+            const string sql = "SELECT * FROM Programme";
+
+            using (var c = ConnectionFactory.GetConnection())
+            {
+                ProgrammesRepeater.DataSource = c.Query<Programme>(sql);
+                ProgrammesRepeater.DataBind();
+            }
         }
     }
 }
