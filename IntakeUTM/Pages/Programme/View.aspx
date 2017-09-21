@@ -15,7 +15,7 @@
             <asp:HyperLink ID="AddButton" CssClass="btn btn-primary" ToolTip="Add Template" runat="server">
                 Add
             </asp:HyperLink>
-            <asp:HyperLink ID="BackButton" NavigateUrl="Programmes.aspx" CssClass="btn btn-link" runat="server">Back</asp:HyperLink>
+            <asp:HyperLink ID="BackButton" NavigateUrl="~/Pages/Programme/List.aspx" CssClass="btn btn-link" runat="server">Back</asp:HyperLink>
         </div>
         <table class="table">
             <thead>
@@ -30,7 +30,7 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <asp:HyperLink ID="EditLink" NavigateUrl='<%# "~/Samples/Template.aspx?Id=" + ((PagesTemplate) Container.DataItem).Id %>' runat="server">
+                            <asp:HyperLink ID="EditLink" NavigateUrl='<%# "~/Pages/PagesTemplate/View.aspx?Id=" + ((PagesTemplate) Container.DataItem).Id %>' runat="server">
                                 <%# ((PagesTemplate) Container.DataItem).Name %>
                             </asp:HyperLink>
                         </td>
