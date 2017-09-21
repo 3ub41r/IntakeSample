@@ -6,9 +6,7 @@
     <h1>
         <asp:Literal ID="ProgrammeName" runat="server"></asp:Literal>
     </h1>
-    
     <h3>Templates</h3>
-    
     <asp:HyperLink ID="AddButton" CssClass="btn btn-primary" ToolTip="Add Template" runat="server">
         Add
     </asp:HyperLink>
