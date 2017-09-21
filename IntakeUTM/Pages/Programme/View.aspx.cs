@@ -26,7 +26,7 @@ namespace IntakeUTM.Pages.Programme
                 if (programme == null) return;
 
                 ProgrammeName.Text = programme.Name;
-                AddButton.NavigateUrl = "~/Samples/Template.aspx?programmeId=" + programme.Id;
+                AddButton.NavigateUrl = "~/Pages/PagesTemplate/View.aspx?programmeId=" + programme.Id;
                 BindTemplates(int.Parse(id));
             }
         }

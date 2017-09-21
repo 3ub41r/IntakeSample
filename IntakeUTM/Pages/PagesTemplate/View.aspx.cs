@@ -29,7 +29,7 @@ namespace IntakeUTM.Pages.Template
                 if (programme == null) return;
 
                 ProgrammeLiteral.Text = programme.Code + " - " + programme.Name;
-                BackLink.NavigateUrl = "~/Samples/ProgrammeDetails.aspx?Id=" + programme.Id;
+                BackLink.NavigateUrl = "~/Pages/Programme/View.aspx?Id=" + programme.Id;
             }
             SetEmptyTemplate();
         }
