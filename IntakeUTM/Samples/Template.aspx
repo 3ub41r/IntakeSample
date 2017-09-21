@@ -26,9 +26,10 @@
     <div class="form-group">
         <asp:TextBox ID="OfferLetterText" CssClass="wysiwyg" TextMode="MultiLine" runat="server"></asp:TextBox>
     </div>
-
-    <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary" runat="server" OnClick="SaveButton_OnClick">Save</asp:LinkButton>
-    <asp:HyperLink ID="BackLink" CssClass="btn btn-link" runat="server">Back</asp:HyperLink>
+    <div class="form-group">
+        <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary" runat="server" OnClick="SaveButton_OnClick">Save</asp:LinkButton>
+        <asp:HyperLink ID="BackLink" CssClass="btn btn-link" runat="server">Back</asp:HyperLink>
+    </div>
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="FooterPlaceHolder" runat="server">

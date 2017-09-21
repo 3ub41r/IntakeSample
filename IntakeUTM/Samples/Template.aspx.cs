@@ -2,7 +2,6 @@
 using IntakeUTM.Models;
 using System;
 using System.IO;
-using System.Linq;
 
 namespace IntakeUTM.Samples
 {
@@ -41,7 +40,7 @@ namespace IntakeUTM.Samples
             var path = Server.MapPath("~/Templates/SuratTawaran.html");
             var template = File.ReadAllText(path);
 
-            OfferLetterText.Text = template;
+            OfferLetterText.Text = template.Trim();
         }
 
         protected void BindApplicationStatus()
@@ -67,7 +66,7 @@ namespace IntakeUTM.Samples
                 {
                     Name = TemplateName.Text,
                     Language = Language.SelectedValue,
-                    AppStatusListId = Int32.Parse(AppStatusListId.SelectedValue),
+                    AppStatusListId = int.Parse(AppStatusListId.SelectedValue),
                     ProgrammeId = Id,
                     ContentText = OfferLetterText.Text
                 });
