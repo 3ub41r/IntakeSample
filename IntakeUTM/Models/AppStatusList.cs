@@ -6,16 +6,13 @@ namespace IntakeUTM.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class ApplicationStatu
+    [Table("AppStatusList")]
+    public partial class AppStatusList
     {
         public int Id { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string Name { get; set; }
-
-        [StringLength(100)]
-        public string Description { get; set; }
 
         public int? SortOrder { get; set; }
     }

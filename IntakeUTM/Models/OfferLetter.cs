@@ -18,6 +18,6 @@ namespace IntakeUTM.Models
 
         public int ApplicationId { get; set; }
 
-        public int ApplicationStatusId { get; set; }
+        public int AppStatusListId { get; set; }
     }
 }

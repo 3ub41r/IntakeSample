@@ -28,6 +28,6 @@ namespace IntakeUTM.Models
 
         public int? OfferedProgrammeId { get; set; }
 
-        public int? ApplicationStatusId { get; set; }
+        public int? AppStatusListId { get; set; }
     }
 }

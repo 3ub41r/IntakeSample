@@ -26,8 +26,11 @@ namespace IntakeUTM.Models
         [StringLength(50)]
         public string Language { get; set; }
 
-        public int? ApplicationStatusId { get; set; }
+        public int? AppStatusListId { get; set; }
 
         public int? ProgrammeId { get; set; }
+
+        [Column(TypeName = "text")]
+        public string ContentText { get; set; }
     }
 }

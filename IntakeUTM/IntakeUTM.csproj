@@ -310,7 +310,7 @@
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\Application.cs" />
-    <Compile Include="Models\ApplicationStatu.cs" />
+    <Compile Include="Models\AppStatusList.cs" />
     <Compile Include="Models\OfferLetter.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\Programme.cs" />

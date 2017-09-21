@@ -2,11 +2,34 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainPlaceHolder" runat="server">
+    
     <h1>Template</h1>
     <h3>
         <asp:Literal ID="ProgrammeLiteral" runat="server"></asp:Literal>
     </h3>
-    <asp:TextBox ID="OfferLetterText" CssClass="wysiwyg" TextMode="MultiLine" runat="server"></asp:TextBox>
+    <div class="form-group">
+        <label>Name</label>
+        <asp:TextBox ID="TemplateName" CssClass="form-control" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <label>Language</label>
+        <asp:DropDownList ID="Language" CssClass="form-control" runat="server">
+            <asp:ListItem>English</asp:ListItem>
+            <asp:ListItem>Malay</asp:ListItem>
+        </asp:DropDownList>
+    </div>
+    <div class="form-group">
+        <label>Application Status</label>
+        <asp:DropDownList ID="AppStatusListId" CssClass="form-control" runat="server">
+        </asp:DropDownList>
+    </div>
+    <div class="form-group">
+        <asp:TextBox ID="OfferLetterText" CssClass="wysiwyg" TextMode="MultiLine" runat="server"></asp:TextBox>
+    </div>
+
+    <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary" runat="server" OnClick="SaveButton_OnClick">Save</asp:LinkButton>
+    <asp:HyperLink ID="BackLink" CssClass="btn btn-link" runat="server">Back</asp:HyperLink>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="FooterPlaceHolder" runat="server">
 </asp:Content>

@@ -2,6 +2,7 @@
 using IntakeUTM.Models;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace IntakeUTM.Samples
 {
@@ -10,6 +11,7 @@ namespace IntakeUTM.Samples
         protected void Page_Load(object sender, EventArgs e)
         {
             BindProgramme();
+            BindApplicationStatus();
         }
 
         protected void BindProgramme()
@@ -24,6 +26,7 @@ namespace IntakeUTM.Samples
                 if (programme == null) return;
 
                 ProgrammeLiteral.Text = programme.Code + " - " + programme.Name;
+                BackLink.NavigateUrl = "~/Samples/ProgramDetails.aspx?Id=" + programme.Id;
             }
             SetEmptyTemplate();
         }
@@ -35,6 +38,22 @@ namespace IntakeUTM.Samples
             var template = File.ReadAllText(path);
 
             OfferLetterText.Text = template;
+        }
+
+        protected void BindApplicationStatus()
+        {
+            const string sql = "SELECT * FROM AppStatusList ORDER BY SortOrder";
+            using (var c = ConnectionFactory.GetConnection())
+            {
+                AppStatusListId.DataSource = c.Query<AppStatusList>(sql);
+                AppStatusListId.DataTextField = "Name";
+                AppStatusListId.DataValueField = "Id";
+                AppStatusListId.DataBind();
+            }
+        }
+
+        protected void SaveButton_OnClick(object sender, EventArgs e)
+        {
         }
     }
 }
