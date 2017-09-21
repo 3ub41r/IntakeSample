@@ -27,5 +27,7 @@ namespace IntakeUTM.Models
         public string Language { get; set; }
 
         public int? ApplicationStatusId { get; set; }
+
+        public int? ProgrammeId { get; set; }
     }
 }

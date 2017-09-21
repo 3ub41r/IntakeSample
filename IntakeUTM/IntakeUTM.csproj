@@ -156,8 +156,10 @@
     </Content>
     <Content Include="Main.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Samples\ProgrammeDetails.aspx" />
     <Content Include="Samples\Programmes.aspx" />
     <Content Include="Samples\SuratTawaran.aspx" />
+    <Content Include="Samples\Template.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -314,6 +316,13 @@
     <Compile Include="Models\Programme.cs" />
     <Compile Include="Models\Template.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\ProgrammeDetails.aspx.cs">
+      <DependentUpon>ProgrammeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\ProgrammeDetails.aspx.designer.cs">
+      <DependentUpon>ProgrammeDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Programmes.aspx.cs">
       <DependentUpon>Programmes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -327,6 +336,13 @@
     </Compile>
     <Compile Include="Samples\SuratTawaran.aspx.designer.cs">
       <DependentUpon>SuratTawaran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Template.aspx.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\Template.aspx.designer.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

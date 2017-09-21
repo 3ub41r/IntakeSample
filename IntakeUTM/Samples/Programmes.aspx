@@ -16,7 +16,11 @@
             <asp:Repeater ID="ProgrammesRepeater" runat="server">
                 <ItemTemplate>
                     <tr>
-                        <td><%# ((Programme)Container.DataItem).Code %></td>
+                        <td>
+                            <asp:HyperLink ID="ProgrammeLink" runat="server" NavigateUrl='<%# "ProgrammeDetails.aspx?Id=" + ((Programme)Container.DataItem).Id %>'>
+                                <%# ((Programme)Container.DataItem).Code %>
+                            </asp:HyperLink>
+                        </td>
                         <td><%# ((Programme)Container.DataItem).Name %></td>
                         <td><%# ((Programme)Container.DataItem).ProgrammeType %></td>
                     </tr>
