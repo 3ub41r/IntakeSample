@@ -24,6 +24,10 @@
         </asp:DropDownList>
     </div>
     <div class="form-group">
+        <label>Sort Order</label>
+        <asp:TextBox ID="SortOrder" CssClass="form-control" runat="server"></asp:TextBox>
+    </div>
+    <div class="form-group">
         <asp:TextBox ID="OfferLetterText" CssClass="wysiwyg" TextMode="MultiLine" runat="server"></asp:TextBox>
     </div>
     <div class="form-group">

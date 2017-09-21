@@ -29,7 +29,7 @@ namespace IntakeUTM.Samples
                 if (programme == null) return;
 
                 ProgrammeLiteral.Text = programme.Code + " - " + programme.Name;
-                BackLink.NavigateUrl = "~/Samples/ProgramDetails.aspx?Id=" + programme.Id;
+                BackLink.NavigateUrl = "~/Samples/ProgrammeDetails.aspx?Id=" + programme.Id;
             }
             SetEmptyTemplate();
         }
@@ -58,8 +58,8 @@ namespace IntakeUTM.Samples
         protected void SaveButton_OnClick(object sender, EventArgs e)
         {
             const string sql = @"
-            INSERT INTO PagesTemplate (Name, Language, AppStatusListId, ProgrammeId, ContentText)
-            VALUES (@Name, @Language, @AppStatusListId, @ProgrammeId, @ContentText)";
+            INSERT INTO PagesTemplate (Name, Language, AppStatusListId, ProgrammeId, ContentText, SortOrder)
+            VALUES (@Name, @Language, @AppStatusListId, @ProgrammeId, @ContentText, @SortOrder)";
             using (var c = ConnectionFactory.GetConnection())
             {
                 c.Execute(sql, new PagesTemplate()
@@ -68,7 +68,8 @@ namespace IntakeUTM.Samples
                     Language = Language.SelectedValue,
                     AppStatusListId = int.Parse(AppStatusListId.SelectedValue),
                     ProgrammeId = Id,
-                    ContentText = OfferLetterText.Text
+                    ContentText = OfferLetterText.Text,
+                    SortOrder = int.Parse(SortOrder.Text)
                 });
             }
         }

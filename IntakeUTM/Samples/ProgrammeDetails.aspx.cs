@@ -33,10 +33,10 @@ namespace IntakeUTM.Samples
 
         protected void BindTemplates(int programmeId)
         {
-            const string sql = "SELECT * FROM Template WHERE ProgrammeId = @Id";
+            const string sql = "SELECT * FROM PagesTemplate WHERE ProgrammeId = @Id";
             using (var c = ConnectionFactory.GetConnection())
             {
-                var templates = c.Query<Template>(sql, new { Id = programmeId });
+                var templates = c.Query<PagesTemplate>(sql, new { Id = programmeId });
                 if (!templates.Any()) return;
 
                 DataRepeater.DataSource = templates;
