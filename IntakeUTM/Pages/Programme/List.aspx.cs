@@ -1,8 +1,7 @@
-﻿using Dapper;
-using System;
-using IntakeUTM.Models;
+﻿using System;
+using Dapper;
 
-namespace IntakeUTM.Samples
+namespace IntakeUTM.Pages.Programme
 {
     public partial class Programmes : System.Web.UI.Page
     {
@@ -17,7 +16,7 @@ namespace IntakeUTM.Samples
 
             using (var c = ConnectionFactory.GetConnection())
             {
-                ProgrammesRepeater.DataSource = c.Query<Programme>(sql);
+                ProgrammesRepeater.DataSource = c.Query<Models.Programme>(sql);
                 ProgrammesRepeater.DataBind();
             }
         }

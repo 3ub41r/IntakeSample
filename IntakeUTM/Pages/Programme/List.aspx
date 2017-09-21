@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Programmes.aspx.cs" Inherits="IntakeUTM.Samples.Programmes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="IntakeUTM.Pages.Programme.Programmes" %>
 <%@ Import Namespace="IntakeUTM.Models" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
 </asp:Content>
@@ -17,7 +17,7 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <asp:HyperLink ID="ProgrammeLink" runat="server" NavigateUrl='<%# "ProgrammeDetails.aspx?Id=" + ((Programme)Container.DataItem).Id %>'>
+                            <asp:HyperLink ID="ProgrammeLink" runat="server" NavigateUrl='<%# "~/Pages/Programme/View.aspx?Id=" + ((Programme)Container.DataItem).Id %>'>
                                 <%# ((Programme)Container.DataItem).Code %>
                             </asp:HyperLink>
                         </td>

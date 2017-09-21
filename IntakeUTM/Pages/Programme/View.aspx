@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="ProgrammeDetails.aspx.cs" Inherits="IntakeUTM.Samples.ProgrammeDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="~/Samples/View.aspx.cs" Inherits="IntakeUTM.Pages.Programme.ProgrammeDetails" %>
 <%@ Import Namespace="IntakeUTM.Models" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeaderPlaceHolder" runat="server">
 </asp:Content>

@@ -1,9 +1,9 @@
-﻿using Dapper;
-using IntakeUTM.Models;
-using System;
+﻿using System;
 using System.Linq;
+using Dapper;
+using IntakeUTM.Models;
 
-namespace IntakeUTM.Samples
+namespace IntakeUTM.Pages.Programme
 {
     public partial class ProgrammeDetails : System.Web.UI.Page
     {
@@ -22,7 +22,7 @@ namespace IntakeUTM.Samples
             const string sql = "SELECT * FROM Programme WHERE Id = @Id";
             using (var c = ConnectionFactory.GetConnection())
             {
-                var programme = c.QueryFirst<Programme>(sql, new { Id = id });
+                var programme = c.QueryFirst<Models.Programme>(sql, new { Id = id });
                 if (programme == null) return;
 
                 ProgrammeName.Text = programme.Name;

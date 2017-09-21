@@ -44,6 +44,11 @@
                                         Surat Tawaran
                                     </asp:HyperLink>
                                 </li>
+                                <li>
+                                    <asp:HyperLink ID="Programme" NavigateUrl="~/Pages/Programme/List.aspx" runat="server">
+                                        Programmes
+                                    </asp:HyperLink>
+                                </li>
                             </ul>
                         </li>
                     </ul>

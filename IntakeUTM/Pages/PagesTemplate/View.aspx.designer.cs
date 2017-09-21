@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IntakeUTM.Samples {
+namespace IntakeUTM.Pages.Template {
     
     
     public partial class Template {
