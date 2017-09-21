@@ -3,7 +3,7 @@ using System.IO;
 using Dapper;
 using IntakeUTM.Models;
 
-namespace IntakeUTM.Pages.Template
+namespace IntakeUTM.Pages.PagesTemplate
 {
     public partial class Template : System.Web.UI.Page
     {
@@ -62,7 +62,7 @@ namespace IntakeUTM.Pages.Template
             VALUES (@Name, @Language, @AppStatusListId, @ProgrammeId, @ContentText, @SortOrder)";
             using (var c = ConnectionFactory.GetConnection())
             {
-                c.Execute(sql, new PagesTemplate()
+                c.Execute(sql, new Models.PagesTemplate()
                 {
                     Name = TemplateName.Text,
                     Language = Language.SelectedValue,
