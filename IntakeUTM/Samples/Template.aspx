@@ -3,10 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainPlaceHolder" runat="server">
     <h1>Template</h1>
-    <h2>
+    <h3>
         <asp:Literal ID="ProgrammeLiteral" runat="server"></asp:Literal>
-    </h2>
-    <asp:TextBox ID="OfferLetterText" runat="server"></asp:TextBox>
+    </h3>
+    <asp:TextBox ID="OfferLetterText" CssClass="wysiwyg" TextMode="MultiLine" runat="server"></asp:TextBox>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="FooterPlaceHolder" runat="server">
 </asp:Content>

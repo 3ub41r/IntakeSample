@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using IntakeUTM.Models;
 using System;
+using System.IO;
 
 namespace IntakeUTM.Samples
 {
@@ -8,7 +9,7 @@ namespace IntakeUTM.Samples
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            BindProgramme();
         }
 
         protected void BindProgramme()
@@ -24,6 +25,16 @@ namespace IntakeUTM.Samples
 
                 ProgrammeLiteral.Text = programme.Code + " - " + programme.Name;
             }
+            SetEmptyTemplate();
+        }
+
+        protected void SetEmptyTemplate()
+        {
+            // Dapatkan default template
+            var path = Server.MapPath("~/Templates/SuratTawaran.html");
+            var template = File.ReadAllText(path);
+
+            OfferLetterText.Text = template;
         }
     }
 }
