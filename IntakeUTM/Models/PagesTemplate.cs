@@ -6,8 +6,8 @@ namespace IntakeUTM.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Template")]
-    public partial class Template
+    [Table("PagesTemplate")]
+    public partial class PagesTemplate
     {
         public int Id { get; set; }
 

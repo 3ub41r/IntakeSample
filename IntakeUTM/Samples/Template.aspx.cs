@@ -8,6 +8,8 @@ namespace IntakeUTM.Samples
 {
     public partial class Template : System.Web.UI.Page
     {
+        protected int Id;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             BindProgramme();
@@ -18,6 +20,8 @@ namespace IntakeUTM.Samples
         {
             var id = Request.QueryString["programmeId"];
             if (id == null) return;
+
+            Id = int.Parse(id);
 
             const string sql = "SELECT * FROM Programme WHERE Id = @Id";
             using (var c = ConnectionFactory.GetConnection())
@@ -54,6 +58,20 @@ namespace IntakeUTM.Samples
 
         protected void SaveButton_OnClick(object sender, EventArgs e)
         {
+            const string sql = @"
+            INSERT INTO PagesTemplate (Name, Language, AppStatusListId, ProgrammeId, ContentText)
+            VALUES (@Name, @Language, @AppStatusListId, @ProgrammeId, @ContentText)";
+            using (var c = ConnectionFactory.GetConnection())
+            {
+                c.Execute(sql, new PagesTemplate()
+                {
+                    Name = TemplateName.Text,
+                    Language = Language.SelectedValue,
+                    AppStatusListId = Int32.Parse(AppStatusListId.SelectedValue),
+                    ProgrammeId = Id,
+                    ContentText = OfferLetterText.Text
+                });
+            }
         }
     }
 }
