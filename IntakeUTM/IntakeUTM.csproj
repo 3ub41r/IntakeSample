@@ -156,6 +156,7 @@
     </Content>
     <Content Include="Main.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Pages\PagesTemplate\Edit.aspx" />
     <Content Include="Pages\Programme\View.aspx" />
     <Content Include="Pages\Programme\List.aspx" />
     <Content Include="Samples\SuratTawaran.aspx" />
@@ -315,6 +316,13 @@
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PagesTemplate.cs" />
     <Compile Include="Models\Programme.cs" />
+    <Compile Include="Pages\PagesTemplate\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PagesTemplate\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\Programme\View.aspx.cs">
       <DependentUpon>View.aspx</DependentUpon>

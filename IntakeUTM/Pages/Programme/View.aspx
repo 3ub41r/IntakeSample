@@ -30,7 +30,7 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <asp:HyperLink ID="EditLink" NavigateUrl='<%# "~/Pages/PagesTemplate/View.aspx?Id=" + ((PagesTemplate) Container.DataItem).Id %>' runat="server">
+                            <asp:HyperLink ID="EditLink" NavigateUrl='<%# "~/Pages/PagesTemplate/View.aspx?templateId=" + ((PagesTemplate) Container.DataItem).Id %>' runat="server">
                                 <%# ((PagesTemplate) Container.DataItem).Name %>
                             </asp:HyperLink>
                         </td>
