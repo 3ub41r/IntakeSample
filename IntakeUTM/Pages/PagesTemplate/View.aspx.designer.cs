@@ -67,6 +67,24 @@ namespace IntakeUTM.Pages.PagesTemplate {
         protected global::System.Web.UI.WebControls.TextBox OfferLetterText;
         
         /// <summary>
+        /// ProgrammeIdHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ProgrammeIdHidden;
+        
+        /// <summary>
+        /// TemplateIdHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TemplateIdHidden;
+        
+        /// <summary>
         /// SaveButton control.
         /// </summary>
         /// <remarks>

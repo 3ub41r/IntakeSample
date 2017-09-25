@@ -31,6 +31,8 @@
         <asp:TextBox ID="OfferLetterText" CssClass="wysiwyg" TextMode="MultiLine" runat="server"></asp:TextBox>
     </div>
     <div class="form-group">
+        <asp:HiddenField ID="ProgrammeIdHidden" runat="server" />
+        <asp:HiddenField ID="TemplateIdHidden" runat="server" />
         <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary" runat="server" OnClick="SaveButton_OnClick">Save</asp:LinkButton>
         <asp:HyperLink ID="BackLink" CssClass="btn btn-link" runat="server">Back</asp:HyperLink>
     </div>
