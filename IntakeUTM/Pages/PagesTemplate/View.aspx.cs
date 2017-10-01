@@ -2,6 +2,7 @@
 using IntakeUTM.Models;
 using System;
 using System.IO;
+using Microsoft.Ajax.Utilities;
 
 namespace IntakeUTM.Pages.PagesTemplate
 {
@@ -28,6 +29,7 @@ namespace IntakeUTM.Pages.PagesTemplate
             {
                 // Dapatkan maklumat program
                 programme = GetProgramme(int.Parse(programmeId));
+                ProgrammeIdHidden.Value = programmeId;
             }
 
             // Dapatkan Id bagi template
@@ -46,6 +48,7 @@ namespace IntakeUTM.Pages.PagesTemplate
                 programme = GetProgramme((int) template.ProgrammeId);
 
             if (programme == null) return;
+
             ProgrammeLiteral.Text = programme.Code + " - " + programme.Name;
             BackLink.NavigateUrl = "~/Pages/Programme/View.aspx?Id=" + programme.Id;
         }
@@ -143,7 +146,7 @@ namespace IntakeUTM.Pages.PagesTemplate
             string sql;
 
             // Kemaskini template sedia ada
-            if (TemplateIdHidden.Value != null)
+            if (TemplateIdHidden.Value != "")
             {
                 sql = @"
                 UPDATE PagesTemplate
@@ -169,6 +172,8 @@ namespace IntakeUTM.Pages.PagesTemplate
             {
                 c.Execute(sql, template);
             }
+
+            Response.Redirect("~/Pages/Programme/View.aspx?Id=" + template.ProgrammeId);
         }
     }
 }
