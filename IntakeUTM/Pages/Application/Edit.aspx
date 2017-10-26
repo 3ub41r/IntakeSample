@@ -6,7 +6,7 @@
         <asp:Literal ID="Name" runat="server"></asp:Literal>
     </h3>
     
-    <table>
+    <table class="table">
         <tbody>
         <tr>
             <th>Email</th>
@@ -30,6 +30,11 @@
         </tr>
         </tbody>
     </table>
+    
+    <div class="form-group">
+        <asp:Button ID="GenerateLetterBtn" CssClass="btn btn-primary" runat="server" Text="Generate Offer Letter" />
+        <a href="~/Pages/Application/Add.aspx" class="btn btn-default" title="Add New Application">Add Application</a>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="FooterPlaceHolder" runat="server">
 </asp:Content>
