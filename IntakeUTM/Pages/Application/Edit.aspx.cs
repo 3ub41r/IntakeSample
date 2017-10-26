@@ -17,13 +17,21 @@ namespace IntakeUTM.Pages.Application
 
         protected void BindApplication()
         {
-            var id = int.Parse(Request.QueryString["Id"]);
-            var application = GetApplication(id);
+            try
+            {
+                var id = int.Parse(Request.QueryString["Id"]);
+                var application = GetApplication(id);
 
-            Name.Text = application.Name;
-            Email.Text = application.Email;
-            AppliedProgramme.Text = GetProgramme(application.ProgrammeId).Name;
-            OfferedProgramme.Text = GetProgramme(application.OfferedProgrammeId).Name;
+                Name.Text = application.Name;
+                Email.Text = application.Email;
+                AppliedProgramme.Text = GetProgramme(application.ProgrammeId).Name;
+                OfferedProgramme.Text = GetProgramme(application.OfferedProgrammeId).Name;
+            }
+            catch (Exception)
+            {
+                Details.Visible = false;
+                NotFound.Visible = true;
+            }
         }
 
         protected Models.Application GetApplication(int id)

@@ -22,6 +22,33 @@ namespace IntakeUTM.Pages.Application {
         protected global::System.Web.UI.WebControls.Literal Name;
         
         /// <summary>
+        /// NotFound control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder NotFound;
+        
+        /// <summary>
+        /// AddLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink AddLink;
+        
+        /// <summary>
+        /// Details control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder Details;
+        
+        /// <summary>
         /// Email control.
         /// </summary>
         /// <remarks>
@@ -56,5 +83,14 @@ namespace IntakeUTM.Pages.Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button GenerateLetterBtn;
+        
+        /// <summary>
+        /// BottomAddLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink BottomAddLink;
     }
 }
