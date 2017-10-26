@@ -17,26 +17,31 @@
     <asp:PlaceHolder ID="Details" runat="server">
         <table class="table">
             <tbody>
-            <tr>
-                <th>Email</th>
-                <td>
-                    <asp:Literal ID="Email" runat="server"></asp:Literal>
-                </td>
-            </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <asp:Literal ID="Email" runat="server"></asp:Literal>
+                    </td>
+                </tr>
             
-            <tr>
-                <th>Applied Programme</th>
-                <td>
-                    <asp:Literal ID="AppliedProgramme" runat="server"></asp:Literal>
-                </td>
-            </tr>
+                <tr>
+                    <th>Applied Programme</th>
+                    <td>
+                        <asp:Literal ID="AppliedProgramme" runat="server"></asp:Literal>
+                    </td>
+                </tr>
             
-            <tr>
-                <th>Offered Programme</th>
-                <td>
-                    <asp:Literal ID="OfferedProgramme" runat="server"></asp:Literal>
-                </td>
-            </tr>
+                <tr>
+                    <th>Offered Programme</th>
+                    <td>
+                        <asp:Literal ID="OfferedProgramme" runat="server"></asp:Literal>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p><asp:Literal ID="OfferLetterText" runat="server"></asp:Literal></p>
+                    </td>
+                </tr>
             </tbody>
         </table>
     

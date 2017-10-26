@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Dapper;
+﻿using Dapper;
+using System;
 
 namespace IntakeUTM.Pages.Application
 {
@@ -19,6 +14,7 @@ namespace IntakeUTM.Pages.Application
         {
             try
             {
+                // Dapatkan Application daripada Id yang dihantar melalui URL
                 var id = int.Parse(Request.QueryString["Id"]);
                 var application = GetApplication(id);
 
@@ -26,9 +22,11 @@ namespace IntakeUTM.Pages.Application
                 Email.Text = application.Email;
                 AppliedProgramme.Text = GetProgramme(application.ProgrammeId).Name;
                 OfferedProgramme.Text = GetProgramme(application.OfferedProgrammeId).Name;
+                OfferLetterText.Text = application.OfferLetterText;
             }
             catch (Exception)
             {
+                // Jika rekod tidak ditemui
                 Details.Visible = false;
                 NotFound.Visible = true;
             }
@@ -44,6 +42,11 @@ namespace IntakeUTM.Pages.Application
             }
         }
 
+        /// <summary>
+        /// Dapatkan maklumat Programme.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         protected Models.Programme GetProgramme(int? id)
         {
             const string sql = "SELECT * FROM Programme WHERE Id = @Id";
