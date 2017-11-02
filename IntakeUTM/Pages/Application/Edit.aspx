@@ -46,10 +46,12 @@
         </table>
     
         <div class="form-group">
-            <asp:Button ID="GenerateLetterBtn" CssClass="btn btn-primary" runat="server" Text="Generate Offer Letter" />
+            
             <asp:HyperLink ID="BottomAddLink" NavigateUrl="~/Pages/Application/Add.aspx" CssClass="btn btn-default" runat="server">Add Application</asp:HyperLink>
         </div>
     </asp:PlaceHolder>
+    <asp:Button ID="GenerateLetterBtn" CssClass="btn btn-primary" runat="server" Text="Generate Offer Letter" OnClick="GenerateLetterBtn_Click" />
+    <asp:Literal ID="OfferLetterLiteral" runat="server"></asp:Literal>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="FooterPlaceHolder" runat="server">
 </asp:Content>

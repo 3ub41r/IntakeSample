@@ -85,6 +85,15 @@ namespace IntakeUTM.Pages.Application {
         protected global::System.Web.UI.WebControls.Literal OfferLetterText;
         
         /// <summary>
+        /// BottomAddLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink BottomAddLink;
+        
+        /// <summary>
         /// GenerateLetterBtn control.
         /// </summary>
         /// <remarks>
@@ -94,12 +103,12 @@ namespace IntakeUTM.Pages.Application {
         protected global::System.Web.UI.WebControls.Button GenerateLetterBtn;
         
         /// <summary>
-        /// BottomAddLink control.
+        /// OfferLetterLiteral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink BottomAddLink;
+        protected global::System.Web.UI.WebControls.Literal OfferLetterLiteral;
     }
 }
