@@ -13,6 +13,42 @@ namespace IntakeUTM.Pages.Programme {
     public partial class AddPdf {
         
         /// <summary>
+        /// TemplateName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TemplateName;
+        
+        /// <summary>
+        /// Language control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Language;
+        
+        /// <summary>
+        /// AppStatusListId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList AppStatusListId;
+        
+        /// <summary>
+        /// SortOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SortOrder;
+        
+        /// <summary>
         /// PdfUpload control.
         /// </summary>
         /// <remarks>
@@ -20,5 +56,14 @@ namespace IntakeUTM.Pages.Programme {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload PdfUpload;
+        
+        /// <summary>
+        /// SubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubmitBtn;
     }
 }
