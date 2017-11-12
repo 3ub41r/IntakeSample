@@ -15,6 +15,7 @@
             <asp:HyperLink ID="AddButton" CssClass="btn btn-primary" ToolTip="Add Template" runat="server">
                 Add
             </asp:HyperLink>
+            <asp:HyperLink ID="AddPdfLink" NavigateUrl="~/Pages/Programme/AddPdf.aspx" CssClass="btn btn-default" runat="server">Add PDF</asp:HyperLink>
             <asp:HyperLink ID="BackButton" NavigateUrl="~/Pages/Programme/List.aspx" CssClass="btn btn-link" runat="server">Back</asp:HyperLink>
         </div>
         <table class="table">

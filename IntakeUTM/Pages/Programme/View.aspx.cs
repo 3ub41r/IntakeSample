@@ -26,6 +26,7 @@ namespace IntakeUTM.Pages.Programme
 
                 ProgrammeName.Text = programme.Name;
                 AddButton.NavigateUrl = "~/Pages/PagesTemplate/View.aspx?programmeId=" + programme.Id;
+                AddPdfLink.NavigateUrl += "?Id=" + programme.Id;
                 BindTemplates(int.Parse(id));
             }
         }
