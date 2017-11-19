@@ -58,6 +58,15 @@ namespace IntakeUTM.Pages.PagesTemplate {
         protected global::System.Web.UI.WebControls.TextBox SortOrder;
         
         /// <summary>
+        /// FileUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FileUrl;
+        
+        /// <summary>
         /// OfferLetterText control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace IntakeUTM.Pages.PagesTemplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox OfferLetterText;
+        
+        /// <summary>
+        /// PdfLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal PdfLiteral;
         
         /// <summary>
         /// ProgrammeIdHidden control.

@@ -32,5 +32,8 @@ namespace IntakeUTM.Models
 
         [Column(TypeName = "text")]
         public string ContentText { get; set; }
+
+        [StringLength(500)]
+        public string FileUrl { get; set; }
     }
 }

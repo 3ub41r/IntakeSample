@@ -2,6 +2,7 @@
 using IntakeUTM.Models;
 using System;
 using System.IO;
+using System.Web;
 using Microsoft.Ajax.Utilities;
 
 namespace IntakeUTM.Pages.PagesTemplate
@@ -92,9 +93,27 @@ namespace IntakeUTM.Pages.PagesTemplate
             Language.Text = template.Language;
             AppStatusListId.SelectedValue = template.AppStatusListId.ToString();
             SortOrder.Text = template.SortOrder.ToString();
+            FileUrl.Text = template.FileUrl;
 
             ProgrammeIdHidden.Value = template.ProgrammeId.ToString();
             TemplateIdHidden.Value = template.Id.ToString();
+
+            // Jika file PDF dimuat naik
+            if (template.FileLocation == null && template.FileUrl == null) return;
+            
+            var url = template.FileUrl ?? GetGoogleDocsEmbeddedUrl(template.FileLocation);
+
+            PdfLiteral.Text =
+                $"<iframe src=\"http://docs.google.com/gview?url={url}&embedded=true\" style=\"width:100%; height:700px;\" frameborder=\"0\"></iframe>";
+        }
+
+        public string GetGoogleDocsEmbeddedUrl(string physicalPath)
+        {
+            // Dapatkan nama file
+            var fileName = Path.GetFileName(physicalPath);
+
+            // URL bagi file yang telah dimuat naik
+            return Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "Uploads/" + fileName;
         }
 
         /// <summary>
@@ -140,6 +159,7 @@ namespace IntakeUTM.Pages.PagesTemplate
                 AppStatusListId = int.Parse(AppStatusListId.SelectedValue),
                 ProgrammeId = int.Parse(ProgrammeIdHidden.Value),
                 ContentText = OfferLetterText.Text,
+                FileUrl = FileUrl.Text,
                 SortOrder = int.Parse(SortOrder.Text)
             };
 
@@ -155,6 +175,7 @@ namespace IntakeUTM.Pages.PagesTemplate
                 AppStatusListId = @AppStatusListId,
                 ProgrammeId = @ProgrammeId,
                 ContentText = @ContentText,
+                FileUrl = @FileUrl,
                 SortOrder = @SortOrder
                 WHERE Id = @Id";
 
@@ -164,8 +185,8 @@ namespace IntakeUTM.Pages.PagesTemplate
             {
                 // Template baru
                 sql = @"
-                INSERT INTO PagesTemplate (Name, Language, AppStatusListId, ProgrammeId, ContentText, SortOrder)
-                VALUES (@Name, @Language, @AppStatusListId, @ProgrammeId, @ContentText, @SortOrder)";
+                INSERT INTO PagesTemplate (Name, Language, AppStatusListId, ProgrammeId, ContentText, SortOrder, FileUrl)
+                VALUES (@Name, @Language, @AppStatusListId, @ProgrammeId, @ContentText, @SortOrder, @FileUrl)";
             }
 
             using (var c = ConnectionFactory.GetConnection())
