@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Dapper;
+using System;
+using System.IO;
 using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Dapper;
 
 namespace IntakeUTM.Pages.Application
 {
@@ -107,6 +103,16 @@ namespace IntakeUTM.Pages.Application
                 // Pergi setiap template dan masukkan nilai ke dalam template
                 foreach (var template in templates)
                 {
+                    // Jika file PDF dimuat naik atau URL ditetapkan
+                    if (template.FileUrl != null || template.FileLocation != null)
+                    {
+                        var url = template.FileUrl ?? GetGoogleDocsEmbeddedUrl(template.FileLocation);
+                        sb.AppendLine(
+                            $"<iframe src=\"http://docs.google.com/gview?url={url}&embedded=true\" style=\"width:100%; height:700px;\" frameborder=\"0\"></iframe>");
+
+                        continue;
+                    }
+
                     sb.Append(template.ContentText.Replace("{{ApplicantName}}", application.Name));
                     sb.Append(template.ContentText.Replace("{{Programme}}", offeredProgramme.Name));
                     sb.AppendLine("--- Page ---");
@@ -114,6 +120,15 @@ namespace IntakeUTM.Pages.Application
 
                 return sb.ToString();
             }
+        }
+
+        public string GetGoogleDocsEmbeddedUrl(string physicalPath)
+        {
+            // Dapatkan nama file
+            var fileName = Path.GetFileName(physicalPath);
+
+            // URL bagi file yang telah dimuat naik
+            return Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "Uploads/" + fileName;
         }
 
         protected Models.Programme GetProgramme(int? id)
